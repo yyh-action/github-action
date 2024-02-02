@@ -2,7 +2,7 @@ name: output
 on: push
 
 jobs:
-  creat-output:
+  create-output:
     runs-on: ubuntu-latest
     outputs:
       test: ${{ steps.check-output.outputs.test }}
@@ -16,7 +16,7 @@ jobs:
         echo ${{ steps.check-output.outputs.test }}
 
   get-output:
-    needs: [creat-output]
+    needs: [create-output]
     runs-on: ubuntu-latest
     steps:
       - name: get output
