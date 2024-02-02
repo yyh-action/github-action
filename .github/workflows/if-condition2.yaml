@@ -8,6 +8,7 @@ jobs:
     - name: exit1
       run: exit1
     - name: echo
+      #첫번째 스텝이 실패하더라도 두번째 스텝은 실행
       if: always()
       run: echo hello
 
