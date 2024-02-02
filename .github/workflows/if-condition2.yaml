@@ -8,6 +8,7 @@ jobs:
     - name: exit1
       run: exit1
     - name: echo
+      if: always()
       run: echo hello
 
   job2:
