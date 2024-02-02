@@ -1,0 +1,12 @@
+name: tag-filter
+on:
+  push:
+    tags:
+    - 'v[0-9]+.[0-9]+.[0-9]'    # v1.0.0 or v2.0.0, v1.0 or 1.0.0 <= 이렇게 패턴과 일치하지 않으면 트리거 되지 않음!
+
+jobs:
+  tag-filter:
+    runs-on: ubuntu-lateat
+    steps:
+    - name: echo
+      run: echo hello
