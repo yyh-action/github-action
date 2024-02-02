@@ -13,6 +13,8 @@ jobs:
   job2:
     needs: [job1]
     runs-on: ubuntu-latest
+    #강제실행
+    if: always()
     steps:
       - name: echo
         run: echo hello
