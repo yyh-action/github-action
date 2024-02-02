@@ -7,7 +7,7 @@ jobs:
     steps:
     - name: check env & secret
       run: |
-        echo ${{ vars.level }}
+        echo ${{ vars.level1 }}
         echo ${{ secrets.key }}
       
        
