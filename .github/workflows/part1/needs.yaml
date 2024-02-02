@@ -1,0 +1,31 @@
+name: needs
+on: push
+
+jobs:
+  job1:
+    runs-on: ubuntu-latest
+    steps: 
+    - name: echo
+      run: echo "Job1 done"
+  job2:
+    runs-on: ubuntu-latest
+    needs: [job1]
+    steps: 
+    - name: echo
+      run: echo "Job2 done"
+  job3:
+    runs-on: ubuntu-latest
+    steps: 
+    - name: echo
+      # exit 1 : 강제 실패 처리
+      run: |
+        echo "Job3 failed"
+        exit 1        
+  job4:
+    runs-on: ubuntu-latest
+    needs: [job3]
+    steps: 
+    - name: echo
+      run: echo "Job4 done"
+
+  # job1과 job3은 종속성이 아니므로 동시 실행하고, job1이 실행 후 종속성에 따라 job2가 실행, job3을 강제 종료라 job4의 경우 job3 종속성에 의해 실행이 안됨! 결국 결과는 job1과 job2만 실행 처리됩니다. 

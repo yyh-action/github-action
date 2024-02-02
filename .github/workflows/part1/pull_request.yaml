@@ -1,0 +1,26 @@
+# 액션의 이름
+name: pull-request-workflow
+
+# 이벤트 트리거
+on: 
+  pull_request:
+    # 생성된 시점에만 실행시 타입설정 요망!
+    types: [opened]      
+
+# 실행시킬 Job의 집합
+jobs:
+  # Job의 이름
+  pull-request-job:
+
+    # 실행시킬 Runner 지정
+    runs-on: ubuntu-latest
+
+    # 스텝의 집합 : 작업 진행내용 순서대로 선언
+    steps: 
+      # 스텝의 이름과 실행 내용
+    - name: step1
+      run: echo hello world
+    - name: step2 
+      run: |
+        echo Hello World
+        echo github action
