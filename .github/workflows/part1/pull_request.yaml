@@ -1,5 +1,5 @@
 # 액션의 이름
-name: pull-request-workflow
+name: pull-request-workflow 1
 
 # 이벤트 트리거
 on: 
