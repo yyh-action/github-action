@@ -14,7 +14,7 @@ on:
         description: 'set repo name'
         required: true
         default: 'github-action'
-        type: string
+        type: string 
 
 jobs:
   create-repo-automation:
