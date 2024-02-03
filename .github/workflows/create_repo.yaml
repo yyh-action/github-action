@@ -1,0 +1,28 @@
+name: create-app
+on:
+  workflow_dispatch:
+    inputs:
+      prefix:
+        description: 'set repo prefix'
+        required: true
+        default: 'service'
+        type: choice
+        options: 
+        - example
+        - service
+      name:
+        description: 'set repo name'
+        required: true
+        default: 'github-action'
+        type: string
+
+jobs:
+  create-repo-automation:
+    runs-on: ubuntu-lateat
+    steps:
+    - name: gh auth login
+      run: |
+        echo ${{ secrets.PERSONAL_ACCESS_TOKEN }} | gh auth login --with-token
+    - name: create-app
+      run: |
+        gh repo create yyh-action/${{ inputs.prefix }}-${{ inputs.name }} --public --add-readme
