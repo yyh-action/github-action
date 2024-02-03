@@ -40,7 +40,7 @@ jobs:
                 "color": "28a745",
                 "fields": [
                   {
-                    "title": "create rep result ${{ steps.ceate-repo.outcome }}",
+                    "title": "create rep result ${{ steps.create-repo.outcome }}",
                     "short": true,
                     "value": "${{ inputs.prefix }}-${{ inputs.name }}"
                   }
